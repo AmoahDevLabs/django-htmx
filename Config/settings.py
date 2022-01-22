@@ -36,7 +36,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'todos.apps.TodosConfig',
-    'compressor',
 ]
 
 MIDDLEWARE = [
@@ -121,11 +120,3 @@ STATIC_URL = '/static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-COMPRESS_FILTERS = {'css': ['todos.admin.PostCSSFilter']}
-COMPRESS_ROOT = BASE_DIR / 'static'
-COMPRESS_ENABLED = True
-STATICFILES_FINDERS = (
-    'django.contrib.staticfiles.finders.FileSystemFinder',  # Needed to display admin static files
-    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-    'compressor.finders.CompressorFinder',
-)
